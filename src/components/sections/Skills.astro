@@ -1,0 +1,62 @@
+---
+import { useTranslations } from '../../i18n/utils';
+
+interface Props {
+  lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const skills = [
+  { name: 'Java', color: 'text-orange-600 dark:text-orange-500' },
+  { name: 'Spring Boot', color: 'text-green-600 dark:text-green-500' },
+  { name: 'C++', color: 'text-blue-700 dark:text-blue-500' },
+  { name: 'PHP', color: 'text-indigo-600 dark:text-indigo-400' },
+  { name: 'Laravel', color: 'text-red-600 dark:text-red-500' },
+  { name: 'Python', color: 'text-yellow-600 dark:text-yellow-500' },
+  { name: 'Dart', color: 'text-cyan-600 dark:text-cyan-400' },
+  { name: 'Flutter', color: 'text-cyan-600 dark:text-cyan-500' },
+  { name: '.NET', color: 'text-purple-700 dark:text-purple-500' },
+  { name: 'JavaScript', color: 'text-yellow-500 dark:text-yellow-400' },
+  { name: 'TypeScript', color: 'text-blue-600 dark:text-blue-400' },
+  { name: 'React', color: 'text-cyan-500 dark:text-cyan-400' },
+  { name: 'Node.js', color: 'text-green-600 dark:text-green-500' },
+  { name: 'HTML5', color: 'text-orange-600 dark:text-orange-500' },
+  { name: 'CSS3', color: 'text-blue-600 dark:text-blue-500' },
+  { name: 'Oracle SQL', color: 'text-red-700 dark:text-red-500' },
+  { name: 'PostgreSQL', color: 'text-blue-500 dark:text-blue-400' },
+  { name: 'MongoDB', color: 'text-green-600 dark:text-green-500' },
+  { name: 'MySQL', color: 'text-blue-600 dark:text-blue-500' },
+  { name: 'SQLite', color: 'text-blue-400 dark:text-blue-300' },
+  { name: 'Firebase', color: 'text-yellow-600 dark:text-yellow-500' },
+  { name: 'Git', color: 'text-orange-700 dark:text-orange-500' },
+  { name: 'GitHub', color: 'text-slate-800 dark:text-white' },
+  { name: 'GitLab', color: 'text-orange-600 dark:text-orange-500' },
+  { name: 'Docker', color: 'text-blue-600 dark:text-blue-400' },
+  { name: 'Postman', color: 'text-orange-600 dark:text-orange-500' },
+  { name: 'VS Code', color: 'text-blue-600 dark:text-blue-500' },
+  { name: 'Eclipse', color: 'text-indigo-700 dark:text-indigo-500' },
+  { name: 'Linux', color: 'text-yellow-600 dark:text-yellow-500' },
+  { name: 'Material UI', color: 'text-blue-600 dark:text-blue-400' },
+  { name: 'Jira', color: 'text-blue-700 dark:text-blue-500' },
+  { name: 'Slack', color: 'text-purple-600 dark:text-purple-400' },
+  { name: 'Figma', color: 'text-pink-600 dark:text-pink-500' },
+  { name: 'Adobe Illustrator', color: 'text-orange-700 dark:text-orange-500' },
+  { name: 'Adobe Photoshop', color: 'text-blue-700 dark:text-blue-500' }
+];
+---
+<section id="skills" class="py-24 max-w-6xl mx-auto px-4 sm:px-6">
+  <h2 class="text-3xl md:text-5xl font-bold mb-12 flex items-center gap-4">
+    <span class="text-purple-500">02.</span> {t('skills.title')}
+    <div class="h-[1px] bg-slate-300 dark:bg-slate-700 flex-grow ml-4"></div>
+  </h2>
+  
+  <div class="flex flex-wrap gap-4 justify-center">
+    {skills.map(skill => (
+      <div class="glass-panel px-6 py-3 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] cursor-default">
+        <span class={`font-semibold ${skill.color}`}>{skill.name}</span>
+      </div>
+    ))}
+  </div>
+</section>

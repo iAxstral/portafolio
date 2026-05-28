@@ -1,0 +1,89 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import CopyButton from '../react/CopyButton';
+
+interface Props {
+  lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+<section id="projects" class="py-24 max-w-6xl mx-auto px-4 sm:px-6">
+  <h2 class="text-3xl md:text-5xl font-bold mb-12 flex items-center gap-4">
+    <span class="text-orange-500">03.</span> {t('projects.title')}
+    <div class="h-[1px] bg-slate-300 dark:bg-slate-700 flex-grow ml-4"></div>
+  </h2>
+  
+  <div class="grid md:grid-cols-2 gap-8">
+    
+    <!-- Project 1: Tech Cup -->
+    <div class="glass-panel p-8 flex flex-col justify-between group hover:border-cyan-500/50 transition-colors duration-500 relative overflow-hidden">
+      <div class="absolute -right-20 -top-20 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/30 transition-all duration-500"></div>
+      
+      <div class="relative z-10">
+        <div class="flex justify-between items-start mb-6">
+          <div class="text-4xl">🏆</div>
+          <div class="flex gap-2">
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-500/20">Leadership</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-purple-500/10 text-purple-700 dark:text-purple-400 border border-purple-500/20">Architecture</span>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 group-hover:text-cyan-500 transition-colors">{t('projects.techcup.title')}</h3>
+        <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+          {t('projects.techcup.desc')}
+        </p>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-3 mt-6 relative z-10">
+        <a href="https://techcupeci.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center text-sm py-2">
+          {t('projects.techcup.visit')}
+        </a>
+        <CopyButton 
+          client:visible
+          textToCopy="https://techcupeci.netlify.app/"
+          tooltipText={t('copy.tooltip')}
+          copiedText={t('copy.copied')}
+          displayLabel={t('projects.techcup.copy')}
+          variant="outline"
+          className="py-2 text-sm"
+        />
+      </div>
+    </div>
+
+    <!-- Project 2: StudentVault-DVA -->
+    <div class="glass-panel p-8 flex flex-col justify-between group hover:border-purple-500/50 transition-colors duration-500 relative overflow-hidden">
+      <div class="absolute -right-20 -top-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/30 transition-all duration-500"></div>
+      
+      <div class="relative z-10">
+        <div class="flex justify-between items-start mb-6">
+          <div class="text-4xl">🔐</div>
+          <div class="flex gap-2">
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-orange-500/10 text-orange-700 dark:text-orange-400 border border-orange-500/20">Backend</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20">Database</span>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 group-hover:text-purple-500 transition-colors">{t('projects.studentvault.title')}</h3>
+        <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+          {t('projects.studentvault.desc')}
+        </p>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-3 mt-6 relative z-10">
+        <a href="https://github.com/iAxstral/StudentVault-DVA" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center text-sm py-2">
+          {t('projects.studentvault.github')}
+        </a>
+        <CopyButton 
+          client:visible
+          textToCopy="https://github.com/iAxstral/StudentVault-DVA"
+          tooltipText={t('copy.tooltip')}
+          copiedText={t('copy.copied')}
+          displayLabel={t('projects.studentvault.copy')}
+          variant="outline"
+          className="py-2 text-sm"
+        />
+      </div>
+    </div>
+    
+  </div>
+</section
