@@ -22,9 +22,7 @@ const part2 = titleRaw.substring(nameIndex + 'Tomas Olaya Diaz'.length);
     </div>
     
     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight animate-fade-in delay-100">
-      {part1}
-      <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-purple-600">Tomas Olaya Diaz</span>
-      {part2}
+      {part1}<span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-purple-600">Tomas Olaya Diaz</span>{part2}
     </h1>
     
     <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-10 leading-relaxed max-w-3xl animate-fade-in delay-200">
@@ -40,6 +38,7 @@ const part2 = titleRaw.substring(nameIndex + 'Tomas Olaya Diaz'.length);
         textToCopy="tomasdi.dev@gmail.com" 
         tooltipText={t('copy.tooltip')} 
         copiedText={t('copy.copied')} 
+        displayLabel={t('hero.copyEmail')}
         variant="outline" 
       />
     </div>
